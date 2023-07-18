@@ -70,7 +70,35 @@ public class CalculatorTest {
 		calculator.divide("10,0");
 	}
 	
+	@Test
+	public void subtractWithString() {
+		calculator = new Calculator();
+		int expected = -9999;
+		int actual = calculator.subtract("hel,lo");
+		assertEquals(expected, actual);
+	}
 	
+	@Test
+	public void multiplyWithString() {
+		calculator = new Calculator();
+		int expected = -9999;
+		int actual = calculator.multiply("hel,lo");
+		assertEquals(expected, actual);
+	}
 	
-
+	@Test
+	public void divideWithString() {
+		calculator = new Calculator();
+		int expected = -9999;
+		int actual = calculator.divide("hel,lo");
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void divideWithoutComma() {
+		calculator = new Calculator();
+		int expected = 4;
+		int actual = calculator.divide("8 2");
+		assertEquals(expected, actual);
+	}
 }
